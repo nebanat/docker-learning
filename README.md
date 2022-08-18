@@ -18,6 +18,16 @@
     * `--net` - set the network mode
         * `host` - host network mode
         * `bridge` - bridge network mode
+    * `-v {volume}:{volume}` - mount a volume
+        * `{volume}` - the volume to mount
+            * `{volume}:/{volume}` - mount the volume at the path
+            * `{volume}:{volume}` - mount the volume at the path
+            * `{volume}:/{volume}:{mode}` - mount the volume at the path with the mode
+                * `mode` - the mode to use
+                    * `ro` - read only
+                    * `rw` - read and write
+    * `--volume_from={volume}` - mount volumes from another container
+        * `{volume}` - the volume to mount from
 * `docker ps` - List all running containers
 * `docker ps -a` - List all containers
 * `docker ps -l` - latest stoped container
@@ -34,9 +44,14 @@
 * `docker build -t {image} {path}` - Build an image
     * `-t {image}` - name of the image
     * `{path}` - path to the dockerfile
+* `docker rmi {image}` - Remove an image
 
 ### Dockerfile
 * Basic instructions on how to build a docker image 
+
+
+### Commit - naming convention
+* ```registry.example.com:port/organization/image-name:version-tag```
 
 ### Dockerfile instruction
 * `FROM {image}` - Set the base image
@@ -52,6 +67,12 @@
 * `VOLUME {path}` - Create a volume
 * `WORKDIR {path}` - Set the working directory; like `cd {path}`
 * `USER {user}` - Set the user to run as
+
+### Dockercompose
+* `docker-compose up` - Start all containers
+* `docker-compose down` - Stop all containers
+* `docker-compose build` - Build all containers
+* `docker-compose stop` - Run a command in a container
 
 ### Lessons
 
